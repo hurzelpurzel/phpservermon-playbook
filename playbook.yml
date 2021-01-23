@@ -22,8 +22,12 @@
         name: "{{app_user}}"
         comment: User for phpservermon
         group: www-data
-    - name : Install mysql-client package
-      apt: name=mysql-client state=present update_cache=true    
+    - name : Install Pip package
+      apt: name=python-pip state=present update_cache=true 
+
+    - name: Install bottle python package
+      pip:
+      name: mysql-connector     
    #----------------------------------------------------------
     - name: Create document root
       file:
