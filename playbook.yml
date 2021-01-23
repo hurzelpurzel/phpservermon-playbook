@@ -22,16 +22,17 @@
         name: "{{app_user}}"
         comment: User for phpservermon
         group: www-data
-    - name: "Debian | Install Mysql Client package"
+    - name: "Debian | Install libs Client package"
       apt:
         name: "{{ item }}"
         state: present
       with_items:
-        - mysql-client
-        - python3-dev
-        - libmysqlclient-dev
-        - python3-mysqldb
-    
+        - python3-venv
+    - name: create venv
+      command: python3 -m venv
+    - name: source venv
+      command: source /bin/activate 
+ 
    #----------------------------------------------------------
     - name: Create document root
       file:
