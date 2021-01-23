@@ -22,6 +22,8 @@
         name: "{{app_user}}"
         comment: User for phpservermon
         group: www-data
+    - name : Install mysql-client package
+      apt: name=mysql-client state=present update_cache=true    
    #----------------------------------------------------------
     - name: Create document root
       file:
