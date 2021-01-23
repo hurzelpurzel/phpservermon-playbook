@@ -83,14 +83,14 @@
   #      src: "files/info.php.j2"
   #      dest: "/var/www/{{ http_host }}/info.php"
   # software
-    - name: download  phpserver monitor
-      get_url:
-        url: https://github.com/phpservermon/phpservermon/releases/download/v3.5.2/phpservermon-3.5.2.tar.gz
-        dest: /tmp
-    - name: "entpacken nach /var/www/{{ http_host }}"
-      command: "tar -C /var/www/{{ http_host }} -xzf /tmp/phpservermon-3.5.2.tar.gz var/www/{{ http_host }}" 
-    - name: "done"
-      command: echo "Please find manual steps at http://docs.phpservermonitor.org/en/latest/install.html "  
+  #  - name: download  phpserver monitor
+  #    get_url:
+  #      url: https://github.com/phpservermon/phpservermon/releases/download/v3.5.2/phpservermon-3.5.2.tar.gz
+  #      dest: /tmp
+  #  - name: "entpacken nach /var/www/{{ http_host }}"
+  #    command: "tar -C /var/www/{{ http_host }} -xzf /tmp/phpservermon-3.5.2.tar.gz var/www/{{ http_host }}" 
+  #  - name: "done"
+  #    command: echo "Please find manual steps at http://docs.phpservermonitor.org/en/latest/install.html "  
        
   handlers:
     - name: Reload Apache

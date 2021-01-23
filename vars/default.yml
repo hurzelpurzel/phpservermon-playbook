@@ -1,6 +1,6 @@
 ---
 mysql_root_password: "hurzelpurzel"
-app_user: "servermon"
+app_user: "www-data"
 http_host: "servermon"
 http_conf: "servermon.conf"
 http_port: "80"
