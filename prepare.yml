@@ -1,0 +1,14 @@
+---
+# Build virtualenv see https://stackoverflow.com/questions/20040141/ansible-command-from-inside-virtualenv 
+- hosts: all
+  vars:
+    PROJECT_HOME: "/tmp/my_test_home"
+    ansible_python_interpreter: "/usr/local/bin/python3"
+  tasks:
+    - name: "Create virtualenv"
+      shell: virtualenv "{{ PROJECT_HOME }}/venv"
+             creates="{{ PROJECT_HOME }}/venv/bin/activate"
+
+    - name: "Copy virtualenv wrapper file"
+      synchronize: src=pyvenv
+                   dest="{{ PROJECT_HOME }}/venv/bin/pyvenv"
