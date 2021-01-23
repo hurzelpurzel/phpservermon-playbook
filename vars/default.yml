@@ -1,5 +1,5 @@
 ---
-mysql_root_password: "hurz"
+mysql_root_password: "mysql_root_password"
 app_user: "servermon"
 http_host: "servermon"
 http_conf: "servermon.conf"
