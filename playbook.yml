@@ -27,7 +27,7 @@
 
     - name: Install bottle python package
       pip:
-      name: mysql-connector     
+        name: mysql-connector     
    #----------------------------------------------------------
     - name: Create document root
       file:
