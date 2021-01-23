@@ -29,7 +29,7 @@
       with_items:
         - python3-venv
     - name: create venv
-      command: python3 -m venv
+      command: mxdir my_env && cd my_env && python3 -m venv
     - name: source venv
       command: source /bin/activate 
  
