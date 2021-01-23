@@ -22,12 +22,16 @@
         name: "{{app_user}}"
         comment: User for phpservermon
         group: www-data
-    - name : Install Pip package
-      apt: name=python-pip state=present update_cache=true 
-
-    - name: Install bottle python package
-      pip:
-        name: mysql-connector     
+    - name: "Debian | Install Mysql Client package"
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - mysql-client
+        - python3-dev
+        - libmysqlclient-dev
+        - python3-mysqldb
+    
    #----------------------------------------------------------
     - name: Create document root
       file:
