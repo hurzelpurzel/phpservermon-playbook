@@ -1,0 +1,11 @@
+---
+- name: phpservermon
+  hosts: localhost
+  roles:
+    - { role: geerlingguy.php-mysql }
+  tasks:
+    - name: download  
+      get_url:
+    url: https://github.com/phpservermon/phpservermon/releases/download/v3.5.2/phpservermon-3.5.2.tar.gz
+    dest: /tmp
+    mode: 0440
