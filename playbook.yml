@@ -22,17 +22,7 @@
         name: "{{app_user}}"
         comment: User for phpservermon
         group: www-data
-    - name: "Debian | Install libs Client package"
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - python3-venv
-    - name: create venv
-      command: mxdir my_env && cd my_env && python3 -m venv
-    - name: source venv
-      command: source /bin/activate 
- 
+   
    #----------------------------------------------------------
     - name: Create document root
       file:
